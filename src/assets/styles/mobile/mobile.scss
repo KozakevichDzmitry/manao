@@ -1,0 +1,13 @@
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+
+  .form__item {
+    flex: 0 0 100%;
+
+    &:nth-child(2n-1) {
+      margin-right: 0;
+    }
+  }
+}

@@ -1,0 +1,319 @@
+.form {
+  margin: 0;
+  padding: 0;
+  max-width: 600px;
+}
+
+.form__body {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.8em;
+}
+
+.form__item {
+  flex: 1 1 calc(50% - .5em);
+}
+
+.form__item:nth-child(2n-1) {
+  margin-right: 1em;
+}
+
+.form__input-wrapper {
+  width: 270px;
+  position: relative;
+  padding-top: .9em;
+  margin-bottom: 1.2em;
+}
+
+.form__input-wrapper--flex {
+  display: flex;
+  align-items: center;
+}
+
+.form__label,
+.form__input:focus ~ .form__label--anime,
+.form__input.valid ~ .form__label--anime,
+.form__input.invalid ~ .form__label--anime,
+.form__input:not(:placeholder-shown) ~ .form__label--anime {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(0%);
+  font-size: $font-size-label;
+  color: $font-color-label;
+  opacity: 0.7;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 400;
+}
+
+.form__label--anime {
+  padding-bottom: .571em;
+  top: 100%;
+  left: 0;
+  transform: translateY(-100%);
+  font-size: $font-size-basic;
+  color: $font-color-basic;
+  font-weight: 400;
+  transition: all 0.3s linear;
+  z-index: 0;
+}
+
+.form__input {
+  width: 100%;
+  margin-top: 0.2em;
+  padding: .5em 0 .4em 0;
+  position: relative;
+  line-height: 1.14;
+  font-size: $font-size-basic;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid $input-border-color;
+  transition: all 0.3s linear;
+  z-index: 1;
+}
+
+.form__input:active,
+.form__input:focus {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid $input-border-color-active;
+}
+
+.form__input::placeholder {
+  color: transparent;
+}
+
+.form__input--invalid, .form__input--invalid:focus {
+  border-bottom: $input-border-color-error 1px solid;
+}
+
+.form__input-error-message {
+  max-width: 100%;
+  padding: 3px 0 0 0;
+  margin: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 12px;
+  transform: translateY(100%);
+  color: $font-color-error;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  opacity: 0;
+  transition: all 0.2s linear;
+}
+
+.form__input--invalid ~ .form__input-error-message {
+  opacity: 1;
+  cursor: help;
+
+  &:hover{
+    width: 100%;
+    padding: 0.3em;
+    background-color: #f2e7e7;
+    overflow: visible;
+    white-space: normal;;
+    transform: translateY(99%) scale(1.1);
+    box-shadow: 1px 1px 4px #e5a4a4, -1px 0 0.4em #ca9b9b;
+    z-index: 2;
+  }
+}
+
+input[type="password"] {
+  padding: .437em 0 .2em 0;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.144em;
+  line-height: 1.2;
+  letter-spacing: .0625em;
+}
+
+.form__error-message {
+  display: none;
+  font-weight: 500;
+  color: $font-color-error;
+  font-size: $font-size-basic;
+
+  &.active {
+    display: block;
+  }
+}
+
+p.form__success-message.active {
+  display: none;
+  color: $font-color-success;
+  font-weight: 500;
+  &.active {
+    display: block;
+  }
+}
+// ---------form__bottom ---------  Start
+.form__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.5em 1.9em 0.6em 1.8em;
+  font-weight: 400;
+  color: #ffffff;
+  background: $bg-button;
+  border: none;
+  cursor: pointer;
+  transition: all .3s linear;
+  position: relative;
+  z-index: 1;
+}
+// ----------form__bottom ---------- End
+
+
+// ----------form message block --------- Start
+.form__message {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column-reverse;
+  width: 100%;
+  height: 100%;
+  padding: 2.9em 1.571em 2.357em 1.5em;
+  opacity: 0;
+  transition: all 0.2s linear;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.message__wrapper {
+  position: absolute;
+  top: 45%;
+  left: 0;
+  overflow: hidden;
+  padding-left: 4.5em;
+}
+
+.message__title {
+  margin: 0 0 0.4em 0;
+  padding: 0;
+  font-size: $font-size-title;
+  font-weight: 500;
+  line-height: 1.18;
+  letter-spacing: -0.021em;
+}
+
+.message__text {
+  margin: 0 0 11px 0;
+  padding: 0;
+  font-weight: 400;
+  line-height: 1.43em;
+}
+// ---------form message block --------- End
+
+
+// BUTTON actions --Start
+.button:hover {
+  transform: translateY(3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.button:focus-visible {
+  transform: translateY(3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.button:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.button.error {
+  -moz-animation: rocking 2s linear;
+  -webkit-animation: rocking 2s linear;
+}
+
+@-webkit-keyframes rocking {
+  35% {
+    transform: rotate(0) translate(0, 0);
+  }
+  40% {
+    transform: rotate(5deg) translate(0, -2px);
+  }
+  45% {
+    transform: rotate(-3deg) translate(0, -2px);
+  }
+  50% {
+    transform: rotate(5deg) translate(0, -2px);
+  }
+  55% {
+    transform: rotate(-3deg) translate(0, -2px);
+  }
+  60% {
+    transform: rotate(5deg) translate(0, -2px);
+  }
+  65% {
+    transform: rotate(-3deg) translate(0, -2px);
+  }
+  70% {
+    transform: rotate(0) translate(0, 0);
+  }
+}
+// ---------BUTTON actions --------- End
+
+
+// ---------Lift Animation -------- Start
+.lift-animation:nth-child(1) {
+  animation: lift 0.5s backwards 0.2s;
+}
+
+.lift-animation:nth-child(2) {
+  animation: lift 0.5s backwards 0.7s;
+}
+
+.lift-animation:nth-child(3) {
+  animation: lift 0.5s backwards 1.2s;
+}
+
+.lift-animation:nth-child(4) {
+  animation: lift 0.5s backwards 1.7s;
+}
+
+.lift-animation:nth-child(5) {
+  animation: lift 0.5s backwards 2.2s;
+}
+
+.lift-animation-btn {
+  animation: lift 0.5s backwards var(--delay);
+}
+
+@-webkit-keyframes lift {
+  from {
+    opacity: 0;
+    transform: translateY(15em);
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes lift {
+  from {
+    opacity: 0;
+    transform: translateY(15em);
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+// ----------Lift Animation --------- End

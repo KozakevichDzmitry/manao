@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteCond %{REQUEST-FILENAME} !-f
+AddDefaultCharset UTF-8
+RewriteCond %{REQUEST_URI} !\.(jpg|gif|png|css|js)$
+RewriteRule ^(.+)$ index.php?query=$1 [L,QSA]
+

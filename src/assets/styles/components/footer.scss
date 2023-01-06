@@ -1,0 +1,13 @@
+footer{
+    padding: 1.5em 0;
+    border-top: 1px solid #d2cfcf;
+    background-color: $bg-footer;
+
+
+  .copyright{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: .8em;
+  }
+}

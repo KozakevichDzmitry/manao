@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+$font-color-basic: #111111;
+$hover-color-link: #3d0f72;
+$font-color-title: #585353;
+$font-color-label: #7C7C7C;
+$font-color-button: #ffffff;
+$font-color-error: #FF2222;
+$font-color-success: #008000;
+
+$input-border-color-error: #FF2828;
+$input-border-color: #F2F2F2;
+$input-border-color-active: #979797;
+
+$bg-button: #3d0f72;
+$bg-header: #f7f7f7;
+$bg-footer: #f7f7f7;
+
+$font-size-title: 2em;
+$font-size-basic: 1em;
+$font-size-label: 0.9em;
+
+html {
+  font-size: 16px;
+}
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: $font-size-basic;
+  font-weight: 400;
+  color: $font-color-basic;
+}
+main{
+  height: 100%;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+ul{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+li{
+  display: inline-block;
+}
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 .63em;
+}
+
+.main__title{
+  margin: 0 0 1em 0;
+  font-size: $font-size-title;
+  font-weight: 600;
+  color: $font-color-title;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active{
+  -webkit-box-shadow: 0 0 0 30px rgb(255, 255, 255) inset !important;
+
+  &::first-line {
+    font-family: 'Montserrat', sans-serif;
+    font-size: $font-size-basic;
+    font-weight: 500;
+    color: $font-color-basic;
+  }
+}
